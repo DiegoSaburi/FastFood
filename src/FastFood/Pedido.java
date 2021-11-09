@@ -4,59 +4,58 @@ import java.util.Objects;
 
 public class Pedido {
 
-    public static int totalPedido = 0;
-    private int numeroPedido;
-    public Cardapio cardapio;
+	public static int totalPedido = 0;
+	private int numeroPedido;
+	public Cardapio cardapio;
 
-    @Override
-    public String toString() {
-        return "Número do pedido= " + this.numeroPedido+
-                " pedido=" + this.cardapio +
-                " valor= " + this.cardapio.valor;
-    }
+	public Pedido(int numeroPedido, Cardapio cardapio) {
+		this.numeroPedido = numeroPedido;
+		this.cardapio = cardapio;
+	}
 
-    public boolean equals(int numeroPedido) {
-        return this.getNumeroPedido() == numeroPedido;
-    }
+	@Override
+	public String toString() {
+		return "Número do pedido= " + this.numeroPedido+
+				" pedido=" + this.cardapio +
+				" valor= " + this.cardapio.valor;
+	}
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Pedido)) return false;
-        Pedido pedido = (Pedido) o;
-        return getNumeroPedido() == pedido.getNumeroPedido();
-    }
+	public boolean equals(int numeroPedido) {
+		return this.getNumeroPedido() == numeroPedido;
+	}
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(getNumeroPedido());
-    }
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (!(o instanceof Pedido pedido)) return false;
+		return getNumeroPedido() == pedido.getNumeroPedido();
+	}
 
-    public Pedido(Cardapio cardapio) {
-        this.cardapio = cardapio;
-        totalPedido +=1;
-        this.numeroPedido = totalPedido;
-    }
+	@Override
+	public int hashCode() {
+		return Objects.hash(getNumeroPedido());
+	}
 
-    public Pedido(int numeroPedido, Cardapio cardapio) {
-        this.numeroPedido = numeroPedido;
-        this.cardapio = cardapio;
-    }
+	public Pedido(Cardapio cardapio) {
+		this.cardapio = cardapio;
+		totalPedido +=1;
+		this.numeroPedido = totalPedido;
+	}
 
-    public Cardapio getCardapio() {
-        return cardapio;
-    }
+	public Cardapio getCardapio() {
+		return cardapio;
+	}
 
-    public void setCardapio(Cardapio cardapio) {
-        this.cardapio = cardapio;
-    }
+	public void setCardapio(Cardapio cardapio) {
+		this.cardapio = cardapio;
+	}
 
-    public int getNumeroPedido(){
-        return  numeroPedido;
-    }
+	public int getNumeroPedido(){
+		return  numeroPedido;
+	}
 
-    public void setNumeroPedido(int numeroPedido){
-        this.numeroPedido = numeroPedido;
-    }
+	public void setNumeroPedido(int numeroPedido){
+		this.numeroPedido = numeroPedido;
+	}
 
 }

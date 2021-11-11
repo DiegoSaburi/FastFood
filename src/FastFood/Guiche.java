@@ -7,11 +7,18 @@ public class Guiche {
 	private ArrayList<Pedido> pedidos;
 	private double montante;
 
+	// Construtor
 	public Guiche(){
 		this.pedidos = new ArrayList<>();
 		this.montante = 0;
 		totalGuiches += 1;
 	}
+
+	/**
+	 *
+	 * @param numeroPedido
+	 * @return pedido existe ou não
+	 */
 
 	public boolean pedidoExiste(int numeroPedido){
 		for(Pedido pedido: this.pedidos){

@@ -1,4 +1,4 @@
-package Interface;
+package main.java.Interface;
 
 import Utils.Input;
 
@@ -6,7 +6,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class FastFoodInterface extends JFrame implements CoresTitanicas, FontesTitanicas {
+public class FastFoodInterface extends JFrame implements CoresTitanicas,FontesTitanicas {
 	private JPanel Inicio;
 	private JLabel boasVindas;
 	private JButton sair;

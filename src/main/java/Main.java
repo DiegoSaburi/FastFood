@@ -1,7 +1,9 @@
+package main.java;
+
 import FastFood.Restaurante;
-import Interface.FastFoodInterface;
 import Utils.Console;
 import Utils.Input;
+import main.java.Interface.FastFoodInterface;
 
 public class Main {
 

@@ -9,9 +9,9 @@ import java.util.Scanner;
  * obtidos pelo usuário da aplicação
  */
 public class Input {
-	private int quantidadeGuiches;
-	private ArrayList <String> nomeAtendentes;
-	private int guicheEscolhido;
+	private static int quantidadeGuiches;
+	private static ArrayList <String> nomeAtendentes;
+	private static int guicheEscolhido;
 
 	public Input() {
 
@@ -21,9 +21,21 @@ public class Input {
 		return quantidadeGuiches;
 	}
 
-	public boolean setQuantidadeGuiches(int quantidadeGuiches) {
+	public static boolean isInt(String str) {
+		if (str == null) {
+			return false;
+		}
+		try {
+			int d = Integer.parseInt(str);
+		} catch (NumberFormatException nfe) {
+			return false;
+		}
+		return true;
+	}
+
+	public static boolean setQuantidadeGuiches(int quantidadeGuiches) {
 		if (quantidadeGuiches > 0){
-			 this.quantidadeGuiches = quantidadeGuiches;
+			Input.quantidadeGuiches = quantidadeGuiches;
 			 return true;
 		}
 		return false;
@@ -34,7 +46,7 @@ public class Input {
 	}
 
 	public void setNomeAtendentes(ArrayList<String> nomeAtendentes) {
-		this.nomeAtendentes = nomeAtendentes;
+		Input.nomeAtendentes = nomeAtendentes;
 	}
 
 	public int getGuicheEscolhido() {
@@ -42,6 +54,6 @@ public class Input {
 	}
 
 	public void setGuicheEscolhido(int guicheEscolhido) {
-		this.guicheEscolhido = guicheEscolhido;
+		Input.guicheEscolhido = guicheEscolhido;
 	}
 }

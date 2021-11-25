@@ -1,9 +1,7 @@
-package main.java;
-
 import FastFood.Restaurante;
 import Utils.Console;
 import Utils.Input;
-import main.java.Interface.FastFoodInterface;
+import Interface.FastFoodInterface;
 
 public class Main {
 
@@ -13,5 +11,4 @@ public class Main {
 		FastFoodInterface fastFoodInterface = new FastFoodInterface("Fast-Food Titanico",input);
 		fastFoodInterface.setVisible(true);
 	}
-
 }

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Interface.Cadastro">
-  <grid id="27dc6" binding="cadastro" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Interface.NomeGerente">
+  <grid id="27dc6" binding="panelNomeGerente" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="40" left="40" bottom="65" right="65"/>
     <constraints>
-      <xy x="20" y="20" width="500" height="400"/>
+      <xy x="20" y="20" width="488" height="400"/>
     </constraints>
     <properties/>
     <border type="none"/>
     <children>
-      <grid id="7740e" binding="container" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="a8fc3" binding="container" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
@@ -16,15 +16,15 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="f280c" class="javax.swing.JLabel" binding="quantidadeGuiches">
+          <component id="a3dc9" class="javax.swing.JLabel" binding="labelNomeGerente">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Quantidade de Guiches"/>
+              <text value="Digite o nome do gerente"/>
             </properties>
           </component>
-          <component id="2ddcb" class="javax.swing.JButton" binding="ok">
+          <component id="a8c2" class="javax.swing.JButton" binding="ok">
             <constraints>
               <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -33,7 +33,7 @@
               <toolTipText value="A quantidade deve ser maior que 0"/>
             </properties>
           </component>
-          <component id="44f08" class="javax.swing.JTextField" binding="inputQuantidadeGuiches">
+          <component id="921f0" class="javax.swing.JTextField" binding="inputNomeGerente">
             <constraints>
               <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>

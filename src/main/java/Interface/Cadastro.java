@@ -1,7 +1,6 @@
 package Interface;
 
 import Utils.Input;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -14,11 +13,11 @@ public class Cadastro extends JFrame implements CoresTitanicas, FontesTitanicas{
 	private JTextField inputQuantidadeGuiches;
 	private JButton ok;
 
-	public Cadastro(Input input) throws HeadlessException {
+	public Cadastro() throws HeadlessException {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setContentPane(cadastro);
 		this.setLocationRelativeTo(null);
-		this.setSize(640,480);
+		this.setPreferredSize(new Dimension(640,480));
 		this.pack();
 		quantidadeGuiches.setFont(fonte16);
 		cadastro.setBackground(CoresTitanicas.amareloEscuro);
@@ -45,8 +44,11 @@ public class Cadastro extends JFrame implements CoresTitanicas, FontesTitanicas{
 							JOptionPane.ERROR_MESSAGE);
 				}else{
 					Input.setQuantidadeGuiches(Integer.parseInt(inputUser));
+					Cadastro.super.setVisible(false);
+					NomeAtendentes nomeAtendentes = new NomeAtendentes();
+					nomeAtendentes.setVisible(true);
 				}
-
+				System.out.println("Numero de guiches escolhido: " + Input.getQuantidadeGuiches());
 			}
 		});
 	}

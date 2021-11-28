@@ -6,16 +6,17 @@ public class Guiche {
 	private static int totalGuiches = 0;
 	private ArrayList<Pedido> pedidos;
 	private double montante;
+	private Atendente atendente;
 
 	// Construtor
-	public Guiche(){
+	public Guiche(String nomeAtendente){
 		this.pedidos = new ArrayList<>();
 		this.montante = 0;
 		totalGuiches += 1;
+		this.atendente = new Atendente(nomeAtendente);
 	}
 
 	/**
-	 *
 	 * @param numeroPedido
 	 * @return pedido existe ou não
 	 */
@@ -29,6 +30,8 @@ public class Guiche {
 
 	public boolean addPedido(Cardapio cardapio){
 		this.montante += cardapio.valor;
+		Restaurante.addMontante(cardapio.valor);
+		this.atendente.addBonificacao(cardapio.valor);
 		return this.pedidos.add(new Pedido(cardapio));
 	}
 
@@ -53,10 +56,5 @@ public class Guiche {
 		}
 		return this.pedidos.removeIf(pedido -> pedido.equals(numeroPedido));
 	}
-
-// Não fiz o setters pq imagino que os pedidos vão ser setados pelo addPedido, o montante vai ser definido pelos pedidos e o número Guiche é estático.
-
-//Tem que ver de qualé dessa sobrescrita do método de remoer
-
 
 }

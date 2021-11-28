@@ -10,15 +10,20 @@ import java.util.Scanner;
  */
 public class Input {
 	private static int quantidadeGuiches;
-	private static ArrayList <String> nomeAtendentes;
+	public static ArrayList <String> nomeAtendentes = new ArrayList<>();
+	private static String nomeGerente;
 	private static int guicheEscolhido;
 
 	public Input() {
 
 	}
 
-	public int getQuantidadeGuiches() {
-		return quantidadeGuiches;
+	public static String getNomeGerente() {
+		return nomeGerente;
+	}
+
+	public static void setNomeGerente(String nomeGerente) {
+		Input.nomeGerente = nomeGerente;
 	}
 
 	public static boolean isInt(String str) {
@@ -41,19 +46,15 @@ public class Input {
 		return false;
 	}
 
-	public ArrayList<String> getNomeAtendentes() {
-		return nomeAtendentes;
+	public static int getQuantidadeGuiches() {
+		return quantidadeGuiches;
 	}
 
-	public void setNomeAtendentes(ArrayList<String> nomeAtendentes) {
-		Input.nomeAtendentes = nomeAtendentes;
-	}
-
-	public int getGuicheEscolhido() {
+	public static int getGuicheEscolhido() {
 		return guicheEscolhido;
 	}
 
-	public void setGuicheEscolhido(int guicheEscolhido) {
+	public static void setGuicheEscolhido(int guicheEscolhido) {
 		Input.guicheEscolhido = guicheEscolhido;
 	}
 }

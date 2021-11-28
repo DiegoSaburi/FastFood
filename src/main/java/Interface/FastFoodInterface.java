@@ -3,6 +3,7 @@ package Interface;
 import Utils.Input;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -13,13 +14,13 @@ public class FastFoodInterface extends JFrame implements CoresTitanicas,FontesTi
 	private JButton continuar;
 	private JPanel container;
 
-	public FastFoodInterface(String titulo, Input input){
+	public FastFoodInterface(String titulo){
 		super(titulo);
 
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setContentPane(Inicio);
 		this.setLocationRelativeTo(null);
-		this.setSize(640,480);
+		this.setPreferredSize(new Dimension(640,480));
 		this.pack();
 		boasVindas.setFont(fonte32);
 		Inicio.setBackground(CoresTitanicas.amareloEscuro);
@@ -40,7 +41,7 @@ public class FastFoodInterface extends JFrame implements CoresTitanicas,FontesTi
 		continuar.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Cadastro cadastro = new Cadastro(input);
+				Cadastro cadastro = new Cadastro();
 				FastFoodInterface.super.setVisible(false);
 				cadastro.setVisible(true);
 			}

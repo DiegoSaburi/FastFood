@@ -7,11 +7,13 @@ public class Guiche {
 	private ArrayList<Pedido> pedidos;
 	private double montante;
 	private Atendente atendente;
+	private int numeroGuiche;
 
 	// Construtor
 	public Guiche(String nomeAtendente){
 		this.pedidos = new ArrayList<>();
 		this.montante = 0;
+		this.numeroGuiche = totalGuiches;
 		totalGuiches += 1;
 		this.atendente = new Atendente(nomeAtendente);
 	}
@@ -38,6 +40,30 @@ public class Guiche {
 	public boolean addPedido(int numeroPedido,Cardapio cardapio){
 		this.montante += cardapio.valor;
 		return this.pedidos.add(new Pedido(numeroPedido,cardapio));
+	}
+
+	public Atendente getAtendente() {
+		return atendente;
+	}
+
+	public void setAtendente(Atendente atendente) {
+		this.atendente = atendente;
+	}
+
+	public static int getTotalGuiches() {
+		return totalGuiches;
+	}
+
+	public static void setTotalGuiches(int totalGuiches) {
+		Guiche.totalGuiches = totalGuiches;
+	}
+
+	public int getNumeroGuiche() {
+		return numeroGuiche;
+	}
+
+	public void setNumeroGuiche(int numeroGuiche) {
+		this.numeroGuiche = numeroGuiche;
 	}
 
 	public ArrayList<Pedido> getPedidos(){

@@ -1,7 +1,5 @@
 package Interface;
 
-import Utils.Input;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -22,29 +20,25 @@ public class FastFoodInterface extends JFrame implements CoresTitanicas,FontesTi
 		this.setLocationRelativeTo(null);
 		this.setPreferredSize(new Dimension(640,480));
 		this.pack();
+
 		boasVindas.setFont(fonte32);
 		Inicio.setBackground(CoresTitanicas.amareloEscuro);
 		container.setBackground(CoresTitanicas.amareloEscuro);
 		this.setBackground(CoresTitanicas.amareloEscuro);
+
 		sair.setBackground(CoresTitanicas.cinza);
 		sair.setForeground(CoresTitanicas.amareloEscuro);
 		sair.setFont(fonte16);
+		sair.addActionListener(e -> FastFoodInterface.super.dispose());
+
 		continuar.setBackground(CoresTitanicas.cinza);
 		continuar.setForeground(CoresTitanicas.amareloEscuro);
 		continuar.setFont(fonte16);
-		sair.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				FastFoodInterface.super.dispose();
-			}
-		});
-		continuar.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				Cadastro cadastro = new Cadastro();
-				FastFoodInterface.super.setVisible(false);
-				cadastro.setVisible(true);
-			}
+
+		continuar.addActionListener(e -> {
+			QuantidadeGuichesInterface quantidadeGuichesInterface = new QuantidadeGuichesInterface();
+			FastFoodInterface.super.setVisible(false);
+			quantidadeGuichesInterface.setVisible(true);
 		});
 	}
 }

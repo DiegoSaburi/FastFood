@@ -15,9 +15,7 @@ public class Pedido {
 
 	@Override
 	public String toString() {
-		return "Número do pedido= " + this.numeroPedido+
-				" pedido=" + this.cardapio +
-				" valor= " + this.cardapio.valor;
+		return cardapio.nomePedido;
 	}
 
 	public boolean equals(int numeroPedido) {

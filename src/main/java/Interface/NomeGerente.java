@@ -33,6 +33,7 @@ public class NomeGerente extends JFrame implements CoresTitanicas, FontesTitanic
 				Input.setNomeGerente(inputNomeGerente.getText());
 				System.out.println("Nome do gerente: " + Input.getNomeGerente());
 				JanelaPrincipal janelaPrincipal = new JanelaPrincipal();
+				NomeGerente.super.setVisible(false);
 				janelaPrincipal.setVisible(true);
 			}
 		});

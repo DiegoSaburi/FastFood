@@ -11,6 +11,10 @@ public enum Cardapio {
 	public double valor;
 	public String nomePedido;
 
+	/**
+	 * Retorna o nome do lanche e seu valor referente
+	 * @return [nome do lanche, valor do lanche]
+	 */
 	public Object[] toArray(){
 		ArrayList<String> toArrayList = new ArrayList<>();
 		toArrayList.add(nomePedido);

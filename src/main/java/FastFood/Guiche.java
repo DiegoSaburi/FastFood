@@ -9,7 +9,10 @@ public class Guiche {
 	private Atendente atendente;
 	private int numeroGuiche;
 
-	// Construtor
+	/**
+	 * Retorna um objeto da clase Guichê, contém agregação forte com restaurante
+	 * @param nomeAtendente - nome do atendente a ser implementado na classe Atendente
+	 */
 	public Guiche(String nomeAtendente){
 		this.pedidos = new ArrayList<>();
 		this.montante = 0;
@@ -19,10 +22,11 @@ public class Guiche {
 	}
 
 	/**
+	 * Verifica a presença do pedido na lista de pedidos do guichê
 	 * @param numeroPedido
-	 * @return pedido existe ou não
+	 * @return true - lista de pedidos contém
+	 *          false - lista de pedidos não contém
 	 */
-
 	public boolean pedidoExiste(int numeroPedido){
 		for(Pedido pedido: this.pedidos){
 			if(pedido.getNumeroPedido() == numeroPedido) return true;
@@ -30,6 +34,12 @@ public class Guiche {
 		return false;
 	}
 
+	/**
+	 * Adiciona um pedido á lista de pedidos do guichê
+	 * @param cardapio - Enum contendo o pedido
+	 * @return true - Se o pedido foi adicionado
+	 *      false - Se o pedido não foi adicionado
+	 */
 	public boolean addPedido(Cardapio cardapio){
 		this.montante += cardapio.valor;
 		Restaurante.addMontante(cardapio.valor);
@@ -37,43 +47,96 @@ public class Guiche {
 		return this.pedidos.add(new Pedido(cardapio));
 	}
 
-	public boolean addPedido(int numeroPedido,Cardapio cardapio){
-		this.montante += cardapio.valor;
-		return this.pedidos.add(new Pedido(numeroPedido,cardapio));
-	}
-
+	/**
+	 * Retorna o atendente do guiche
+	 * @return Atendente do guichê
+	 */
 	public Atendente getAtendente() {
 		return atendente;
 	}
 
-	public void setAtendente(Atendente atendente) {
-		this.atendente = atendente;
+	/**
+	 * Seta o atendente do guichê
+	 * @param nome - nome do Atendente
+	 */
+	public void setAtendente(String nome ) {
+		this.atendente = new Atendente(nome);
 	}
 
+	/**
+	 * Retorna o total de guiches instânciados
+	 * @return total de guiches instânciados
+	 */
 	public static int getTotalGuiches() {
 		return totalGuiches;
 	}
 
+	/**
+	 * Seta o total de guiches instânciados
+	 * @param totalGuiches - total de guiches instânciados
+	 */
 	public static void setTotalGuiches(int totalGuiches) {
 		Guiche.totalGuiches = totalGuiches;
 	}
 
+	/**
+	 * Retorna o index do guiche
+	 * @return index do guiche
+	 */
 	public int getNumeroGuiche() {
 		return numeroGuiche;
 	}
 
+	/**
+	 * seta o index do guiche
+	 * @param numeroGuiche - index do guiche
+	 */
 	public void setNumeroGuiche(int numeroGuiche) {
 		this.numeroGuiche = numeroGuiche;
 	}
 
+	/**
+	 * Retorna a lista de pedidos do guiche
+	 * @return lista de pedidos do guiche
+	 */
 	public ArrayList<Pedido> getPedidos(){
 		return pedidos;
 	}
 
+	/**
+	 * seta a lista de pedidos do guiche
+	 * @param pedidos - array contendo enum dos pedidos
+	 */
+	public void setPedidos(ArrayList<Cardapio> pedidos) {
+		ArrayList<Pedido> novaListaPedidos = new ArrayList<>();
+		for (Cardapio c : pedidos) {
+			novaListaPedidos.add(new Pedido(c));
+		}
+		this.pedidos = novaListaPedidos;
+	}
+
+	/**
+	 * Retorna o montante adquirido pelo guiche
+	 * @return montante do guiche
+	 */
 	public double getMontante(){
 		return montante;
 	}
 
+	/**
+	 * Seta o montante adquirido pelo guiche
+	 * @param montante - montante do guiche
+	 */
+	public void setMontante(double montante) {
+		this.montante = montante;
+	}
+
+	/**
+	 * Remove o pedido com base em seu index
+	 * @param numeroPedido - index do pedido
+	 * @return true - Se o pedido existe e foi removido
+	 *         false - se o pedido não existe
+	 */
 	public boolean removePedido(int numeroPedido){
 		for (Pedido pedido : this.pedidos){
 			if (pedido.equals(numeroPedido)){

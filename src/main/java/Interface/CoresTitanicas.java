@@ -3,7 +3,7 @@ package Interface;
 import java.awt.*;
 
 /**
- * Contém as cores utilizadas pela TITAN
+ * Contém a paleta de cores utilizadas na interface gráfica
  */
 public interface CoresTitanicas{
 	Color amareloEscuro = new Color(242,169,0);
